@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 08:17 PM
+-- Generation Time: Nov 06, 2022 at 04:49 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -41,7 +41,8 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`product_id`, `product_name`, `product_category`, `price`) VALUES
 (1, 'Fries', 'Snacks', 20),
 (2, 'Coke', 'Drinks', 10),
-(3, 'Pizza', 'Snack', 100);
+(3, 'Pizza', 'Snack', 100),
+(4, 'Burger', 'snacks', 40);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,44 @@ CREATE TABLE `orderparticulars` (
 --
 
 INSERT INTO `orderparticulars` (`sr.no`, `product-id`, `quantity`, `amount`, `orderID`) VALUES
-(1, 3, 1, 10, 'order01');
+(74, 1, 1, 20, '3812'),
+(75, 1, 1, 20, '3812'),
+(76, 1, 1, 20, '3916'),
+(77, 3, 1, 100, '3916'),
+(78, 2, 1, 10, '3916'),
+(79, 2, 1, 10, '3916'),
+(80, 4, 1, 40, '3916'),
+(81, 1, 1, 20, '3916'),
+(82, 2, 1, 10, '3916'),
+(83, 3, 1, 100, '3916'),
+(84, 3, 1, 100, '3916'),
+(85, 4, 1, 40, '3916'),
+(86, 1, 1, 20, '3916'),
+(87, 3, 1, 100, '3916'),
+(88, 2, 1, 10, '3916'),
+(89, 2, 1, 10, '3916'),
+(90, 3, 1, 100, '3916'),
+(91, 2, 1, 10, '3916'),
+(92, 3, 1, 100, '3916'),
+(93, 1, 1, 20, '5057'),
+(94, 3, 1, 100, '1337'),
+(95, 3, 1, 100, '8434'),
+(96, 3, 1, 100, '3963'),
+(97, 3, 1, 100, '233'),
+(98, 3, 1, 100, '3706'),
+(99, 2, 1, 10, '8187'),
+(100, 2, 1, 10, '8187'),
+(101, 2, 1, 10, '8187'),
+(102, 2, 1, 10, '8187'),
+(103, 2, 1, 10, '8187'),
+(104, 2, 1, 10, '8187'),
+(105, 2, 1, 10, '8187'),
+(106, 2, 1, 10, '8187'),
+(107, 1, 1, 20, '4974'),
+(108, 3, 1, 100, '4974'),
+(109, 4, 1, 40, '4974'),
+(110, 1, 1, 20, '4974'),
+(111, 2, 1, 10, '6398');
 
 -- --------------------------------------------------------
 
@@ -87,11 +125,17 @@ CREATE TABLE `table-orders` (
 --
 
 INSERT INTO `table-orders` (`OrderNumber`, `TableNumber`, `CustomerName`, `OccupiedAt`, `NoOfGuests`, `TotalBill`, `PaymentStatus`, `RelievedAt`, `tableVacant`) VALUES
-('123', 1, 'Ankia', '2022-11-05 17:11:40', 1, '12', 'unpaid', '2022-11-05 17:11:40', 1),
-('23', 2, 'Ankia', '2022-11-05 17:16:45', 1, NULL, 'unpaid', NULL, 0),
-('283', 3, 'Ankia', '2022-11-05 18:38:43', 3, NULL, 'unpaid', NULL, 0),
-('3', 1, 'Ankia', '2022-11-05 17:15:19', 1, NULL, 'unpaid', NULL, 0),
-('order01', 1, 'Ankita', '2022-11-05 10:24:04', 2, '100', 'unpaid', '2022-11-05 10:24:04', 1);
+('1337', 1, '3', '2022-11-06 15:20:00', 3, '100', 'paid', '2022-11-06 15:20:02', 1),
+('233', 4, '4', '2022-11-06 15:20:29', -14, '100', 'paid', '2022-11-06 15:20:31', 1),
+('3706', 2, '2x', '2022-11-06 15:27:35', 1, '100', 'paid', '2022-11-06 15:29:11', 1),
+('3812', 8, 'q', '2022-11-06 13:30:32', 1, '40', 'paid', '2022-11-06 14:42:14', 1),
+('3916', 2, 'a', '2022-11-06 14:52:49', 1, '800', 'paid', '2022-11-06 15:19:48', 1),
+('3963', 4, '4', '2022-11-06 15:20:21', 4, '100', 'paid', '2022-11-06 15:20:23', 1),
+('4974', 3, 'a', '2022-11-06 15:35:16', 5, '180', 'paid', '2022-11-06 15:46:09', 1),
+('5057', 1, '1', '2022-11-06 15:19:51', 1, '20', 'paid', '2022-11-06 15:19:54', 1),
+('6398', 2, 'q', '2022-11-06 15:46:14', 1, NULL, 'unpaid', NULL, 0),
+('8187', 2, '1', '2022-11-06 15:29:18', 1, '80', 'paid', '2022-11-06 15:35:08', 1),
+('8434', 3, 'c', '2022-11-06 15:20:09', 3, '100', 'paid', '2022-11-06 15:20:11', 1);
 
 -- --------------------------------------------------------
 
@@ -131,8 +175,8 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `orderparticulars`
   ADD PRIMARY KEY (`sr.no`),
-  ADD KEY `orderID-ForeignKey` (`orderID`),
-  ADD KEY `product-id-foreignKey` (`product-id`);
+  ADD KEY `product-id-foreignKey` (`product-id`),
+  ADD KEY `orderID` (`orderID`);
 
 --
 -- Indexes for table `table-orders`
@@ -154,13 +198,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `product_id` bigint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` bigint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orderparticulars`
 --
 ALTER TABLE `orderparticulars`
-  MODIFY `sr.no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sr.no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -176,7 +220,7 @@ ALTER TABLE `users`
 -- Constraints for table `orderparticulars`
 --
 ALTER TABLE `orderparticulars`
-  ADD CONSTRAINT `orderID-ForeignKey` FOREIGN KEY (`orderID`) REFERENCES `table-orders` (`OrderNumber`),
+  ADD CONSTRAINT `orderparticulars_ibfk_1` FOREIGN KEY (`orderID`) REFERENCES `table-orders` (`OrderNumber`) ON DELETE CASCADE,
   ADD CONSTRAINT `product-id-foreignKey` FOREIGN KEY (`product-id`) REFERENCES `menu` (`product_id`);
 COMMIT;
 
