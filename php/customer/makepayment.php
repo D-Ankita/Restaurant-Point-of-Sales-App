@@ -8,19 +8,24 @@ $sql= "SELECT SUM(amount) FROM orderparticulars WHERE orderID=$orderID  GROUP BY
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 echo "----------sum -----" ;
-echo $totalBill = $row['SUM(amount)'];
-
-$sql= "UPDATE `table-orders` SET `TotalBill`=$totalBill,`PaymentStatus`='paid',`RelievedAt`=now(),`tableVacant`=1 WHERE `OrderNumber`=$orderID";
-if ($mysqli->query($sql)){
-	$message="Hope you had a great Time.. Visit Again!"; 
-	echo "<script>alert('$message');window.location='firstpage.php'</script>";
+$totalBill = $row['SUM(amount)'];
+if($totalBill == null){
+	$message = "Your Cart is empty! Please Order something first.. ";
+	echo "<script>alert('$message');window.location='dashboard.php'</script>";
+}
+else{
+	echo $totalBill;
+	$sql= "UPDATE `table-orders` SET `TotalBill`=$totalBill,`PaymentStatus`='paid',`RelievedAt`=now(),`tableVacant`=1 WHERE `OrderNumber`=$orderID";
+	if ($mysqli->query($sql)){
+		$message="Hope you had a great Time.. Visit Again!"; 
+		echo "<script>alert('$message');window.location='firstpage.php'</script>";
+	}
+	else {
+		echo 'alert("Please try again in some time.. (some network issue)")';
+		
+	};
 	
-	 }
-	 else {
-			echo 'alert("Please try again in some time.. (some network issue)")';
-			
-	 };
-
+}
 ?>
 
 

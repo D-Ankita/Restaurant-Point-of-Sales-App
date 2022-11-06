@@ -14,7 +14,7 @@ if(isset($_POST['addtocart'])){
 	 if($result->num_rows>0){
 	 $row = $result->fetch_assoc();
 	//  echo"-----" ,$row['product_category'];
-		 $product_price = $product_qty * $row['price'];
+		$product_price = $product_qty * $row['price'];
 	//  if($result->num_rows>0){
 	// 	while($row = $result->fetch_assoc()) {
 	// 		echo"-----" ,$row['product_category'];
@@ -47,18 +47,20 @@ if(isset($_POST['addtocart'])){
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cart</title>
-	<link rel="stylesheet" href="../../css/dashboard.css">
-
+	<link rel="stylesheet" href="../../css/commonstyles.css">
+	<link rel="stylesheet" href="../../css/adminDashboard.css">
 </head>
 <body>
 	<div class="container">
-		<div class="content">
-		<div class="nav-bar">
-		<button class='profileName' onclick="history.back()">Go Back</button>
-		<a href="makepayment.php"  class=" cartbutton dashboard-button">Make Payment</a>
+	<div class="nav-btn-container">
+
+		<button class='nav-btn' onclick="history.back()">Go Back</button>
+		<a href="makepayment.php"  class="nav-btn">Make Payment</a>
 </div>
-		<h3 class="title">MY ORDERS</h3>
-		<table>
+		<h3 class="heading">MY ORDERS</h3>
+		<div class='table-container'>
+		<table class='table'>
+		<thead>
 		<tr>
 		<th>product_id</th>
 		<th>product_name</th>
@@ -66,6 +68,8 @@ if(isset($_POST['addtocart'])){
 		<th>product_price</th>
 
 		</tr>
+		</thead>
+		<tbody>
 		<?php
 
 		 $sql = "SELECT * FROM `orderparticulars` where orderID =  $OrderNumber";
@@ -86,8 +90,9 @@ while($row = $result->fetch_assoc()) {
 }
 		
 		?>
+		</tbody>
 </table>
-		</div>
+		<!-- </div> -->
 	</div>
 	
 </body>
