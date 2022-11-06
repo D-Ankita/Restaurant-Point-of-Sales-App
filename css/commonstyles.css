@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Common */
+*{
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none; 
+	border:none;
+  text-decoration: none;
+}
+
+body{
+	background-color: #32312f;
+	font-family: sa;
+}
+
+
+
+/* ALL TABLES */
+
+.table-container{
+	align-items: center;
+	max-height: 65vh;
+	overflow-y:auto;
+	min-width: 50%;
+	width: fit-content;
+	max-width: 70%;
+	border-collapse: collapse;
+	margin: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	/* border: 1px solid white; */
+	/* padding-top: 10px; */
+}
+
+.table-container thead th {
+      position: sticky;
+      top: 0;
+			background-color: #FF1046;
+}
+
+.heading{
+	font-size: 60px;
+	text-align: center;
+	color: #f1f1f1;
+	margin-bottom: 20px;
+}
+
+.details{
+	text-align: center;
+	color: #f1f1f1;
+	margin: 5px;
+}
+
+.span-details{
+	font-size: 16.5px;
+	font-weight: lighter;
+	padding:0px 40px 0px 5px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	text-transform: uppercase;
+
+	
+
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table thead tr th{
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0.35px;
+	color: #ffffff;
+	opacity: 1;
+	padding: 12px;
+	vertical-align: top;
+	border: 1px solid #dee2e685;
+}
+
+.table tbody tr td{
+	font-size: 20px;
+	letter-spacing: 0.35px;
+	font-weight: normal;
+	color: #f1f1f1;
+	background-color: #3c3f44;
+	padding: 8px;
+	text-align: center;
+	border: 1px solid #dee2e685;
+}
+
+.table tbody tr td .btn{
+	
+	width: 130px;
+	text-decoration: none;
+	line-height: 35px;
+	display: inline-block;
+	background-color: #FF1046;
+	font-weight: medium;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: midium;
+	user-select: none;
+	border: 1px solid white;
+	font-size: 14px;
+	opacity: 1;
+}
+
+.table tbody tr td .btn:hover{
+	background-color: #000;
+}
+
+
+
+.nohover:hover{
+	background-color: #FF1046;
+}

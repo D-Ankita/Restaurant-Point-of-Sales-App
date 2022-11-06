@@ -1,0 +1,87 @@
+.nav-btn-container {
+	text-align: right;
+}
+
+.nav-btn:hover {
+	background-color: #000;
+	cursor: pointer;
+
+}
+
+.nav-btn{
+	display: inline-block;
+	padding:10px 35px;
+	font-size: 20px;
+	margin-top: 10px;
+	background-color: #FF1046;
+	color:#fff;
+	font-weight: 600;
+	font-family: sa;
+	margin: 20px;
+	border: 2px solid white;
+	cursor: pointer;
+}
+
+
+/* customer dashboard */
+
+
+.nav-btn-container {
+	text-align: right;
+}
+
+.nav-btn:hover {
+	background-color: #000;
+	cursor: pointer;
+}
+
+.nav-btn{
+	display: inline-block;
+	padding:10px 35px;
+	font-size: 20px;
+	margin-top: 10px;
+	background-color: #FF1046;
+	color:#fff;
+	font-weight: 600;
+	font-family: sa;
+	margin: 20px;
+	border: 2px solid white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-input{
+	background:transparent;
+	border: 1px solid white;
+	line-height: 35px;
+	display: inline-block;
+	font-weight: medium;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: midium;
+	width: 50px;
+}
+
+
+
+/* waiter */
+
+
+.message-container{
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	margin: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding:10px 35px;
+	font-size: 20px;
+	background-color: #FF1046;
+	color:#fff;
+	font-weight: 600;
+	border: 2px solid white;
+}
