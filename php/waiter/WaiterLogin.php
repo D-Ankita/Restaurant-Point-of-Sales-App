@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/commonstyles.css">
 </head>
 <body>
     
@@ -50,7 +50,6 @@ if(isset($_POST['submit'])){
         <input type="email" name="usermail" placeholder="enter your email" class="box" required>
         <input type="password" name="password" placeholder="enter your password" class="box" required>
         <input type="submit" value="login now" class="form-btn" name="submit">
-        <p>don't have an account? <a href="register_form.php">register now!</a></p>
     </form>
 
 </div>
